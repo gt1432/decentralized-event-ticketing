@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-950 text-slate-100 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-purple-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/8 hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-500/10;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500
+           text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200
+           shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-[1.02]
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/15 border border-white/20 hover:border-purple-500/40
+           text-slate-200 font-medium px-6 py-3 rounded-xl transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 hover:border-red-500/50
+           text-red-400 font-medium px-6 py-3 rounded-xl transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3
+           text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500/50
+           focus:ring-1 focus:ring-purple-500/30 transition-all duration-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold gradient-text mb-4;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-green  { @apply badge bg-green-500/20 text-green-400 border border-green-500/30; }
+  .badge-red    { @apply badge bg-red-500/20 text-red-400 border border-red-500/30; }
+  .badge-yellow { @apply badge bg-yellow-500/20 text-yellow-400 border border-yellow-500/30; }
+  .badge-purple { @apply badge bg-purple-500/20 text-purple-400 border border-purple-500/30; }
+  .badge-blue   { @apply badge bg-blue-500/20 text-blue-400 border border-blue-500/30; }
+  .badge-gray   { @apply badge bg-gray-500/20 text-gray-400 border border-gray-500/30; }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  .stat-card {
+    @apply glass-card p-6 flex flex-col gap-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-white\/8 {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Gradient orbs background effect */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-purple {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #7c3aed, transparent 70%);
+  top: -200px;
+  right: -100px;
+}
+
+.orb-blue {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #2563eb, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+}
+
+/* Transaction hash truncation */
+.hash-truncate {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8em;
+  word-break: break-all;
+}
+
+/* QR Scanner override */
+#html5-qrcode-button-camera-permission,
+#html5-qrcode-button-camera-start,
+#html5-qrcode-button-camera-stop {
+  @apply btn-primary text-sm py-2 px-4 !important;
+}
+
+#html5qr-code-full-region {
+  border: none !important;
+  background: transparent !important;
+}
+
+#html5qr-code-full-region img {
+  display: none !important;
+}

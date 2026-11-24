@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables - NEVER commit these
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# Hardhat artifacts
+artifacts/
+cache/
+typechain/
+typechain-types/
+
+# Coverage
+coverage/
+coverage.json
+
+# Hardhat ignition deployments (keep only deploy scripts, not state)
+ignition/deployments/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Wallet / Keys - NEVER commit
+*.key
+*.pem
+keystore/
+wallet.json
+
+# Local hardhat network data
+deployments/localhost/
+
+# Temp files
+*.tmp
+ver.txt
+run_out.txt
+run.bat
+bootstrap.js

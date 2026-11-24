@@ -1,0 +1,15 @@
+{
+  "name": "decentralized-event-ticketing",
+  "version": "1.0.0",
+  "description": "Decentralized Event Ticketing System Using Smart Contracts with Anti-Scalping and NFT-Based Ticket Verification",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "test:contracts": "cd contracts && npx hardhat test",
+    "compile:contracts": "cd contracts && npx hardhat compile",
+    "node:local": "cd contracts && npx hardhat node",
+    "deploy:local": "cd contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "cd contracts && npx hardhat run scripts/deploy.js --network sepolia"
+  }
+}
