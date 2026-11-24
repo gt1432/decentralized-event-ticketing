@@ -62,3 +62,27 @@ ver.txt
 run_out.txt
 run.bat
 bootstrap.js
+
+# Build/pipeline helper scripts (dev-time only)
+run_pipeline*.js
+run_build_only.js
+run_tests_only.js
+run_git_init.js
+read_build*.js
+read_tests*.js
+read_pipeline*.js
+check_p2*.js
+check_dirs*.js
+check_pipeline*.js
+check_out.txt
+check_p2*.txt
+check_dirs*.txt
+pipeline*.txt
+pipe2*.txt
+build_only_out.txt
+build_runner.txt
+tests_only_out.txt
+tests_runner.txt
+git_init*.txt
+read_build_out.txt
+read_tests_out*.txt
